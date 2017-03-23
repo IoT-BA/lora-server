@@ -1,6 +1,6 @@
 FROM golang:1.7
 
-ENV PROJECT_PATH=/go/src/github.com/brocaar
+ENV PROJECT_PATH=/go/src/github.com/brocaar/loraserver
 ENV PATH=$PATH:$PROJECT_PATH/build
 ENV LORASERVER_VERSION 0.15.1
 
@@ -27,6 +27,5 @@ RUN go get github.com/grpc-ecosystem/grpc-gateway/protoc-gen-grpc-gateway
 RUN mkdir -p $PROJECT_PATH
 WORKDIR $PROJECT_PATH
 RUN git clone --single-branch --branch $LORASERVER_VERSION https://github.com/brocaar/loraserver
-WORKDIR $PROJECT_PATH/loraserver
 RUN make build
 CMD ["./build/loraserver"]
