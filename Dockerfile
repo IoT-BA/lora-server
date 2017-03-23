@@ -26,6 +26,6 @@ RUN go get github.com/grpc-ecosystem/grpc-gateway/protoc-gen-grpc-gateway
 # make loraserver
 RUN mkdir -p $PROJECT_PATH
 WORKDIR $PROJECT_PATH
-RUN git clone --single-branch --branch $LORASERVER_VERSION https://github.com/brocaar/loraserver
+RUN git clone --single-branch --branch $LORASERVER_VERSION https://github.com/brocaar/loraserver ./
 RUN make build
 CMD ["./build/loraserver"]
