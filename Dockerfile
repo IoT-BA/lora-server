@@ -28,4 +28,4 @@ RUN mkdir -p $PROJECT_PATH
 WORKDIR $PROJECT_PATH
 RUN git clone --single-branch --branch $LORASERVER_VERSION https://github.com/brocaar/loraserver ./
 RUN make build
-CMD ["./build/loraserver"]
+CMD ["loraserver"]
