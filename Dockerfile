@@ -2,7 +2,7 @@ FROM golang:1.7
 
 ENV PROJECT_PATH=/go/src/github.com/brocaar/loraserver
 ENV PATH=$PATH:$PROJECT_PATH/build
-ENV LORASERVER_VERSION 0.15.1
+ENV LORASERVER_VERSION 0.16.1
 
 # install tools
 RUN go get github.com/golang/lint/golint
